@@ -6,7 +6,7 @@ export type LayoutProps = {
     children: ReactNode;
   }; 
 
-const layout = ({children}: LayoutProps) => {
+const HomePageLayout = ({children}: LayoutProps) => {
   return (
     <>
       <HeaderComponent />
@@ -16,4 +16,4 @@ const layout = ({children}: LayoutProps) => {
   )
 }
 
-export default layout
+export default HomePageLayout
