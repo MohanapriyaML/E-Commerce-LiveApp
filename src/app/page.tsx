@@ -5,13 +5,13 @@ import React, { useEffect, useState } from "react";
 
 const Home: React.FC = () => {
   const [collection, setCollection] = useState<CollectionItem[]>([]);
-  const itemId = 97;
+  const itemId = 3;
 
   useEffect(() => {
     const fetchCollection = async () => {
       try {
         const response = await fetch(
-          `http://localhost:1337/api/e-commerces/${itemId}?populate=*`
+       `https://strong-bee-4932a093ba.strapiapp.com/api/e-commerces/${itemId}?populate=*`
         );
 
         const data = await response.json();
