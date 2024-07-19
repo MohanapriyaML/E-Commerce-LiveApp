@@ -4,7 +4,7 @@ import ComponentOne from "../component1/Component";
 import ComponentTwo from "../component2/Component2";
 import Component3 from "../component3/component3";
 import Component4 from "../component4/component4";
-import { CollectionItem } from "./types";
+import useCollection from "@/service/api";
 
 const componentMap: { [key: number]: JSX.Element } = {
   1: <ComponentOne />,
@@ -13,11 +13,11 @@ const componentMap: { [key: number]: JSX.Element } = {
   4: <Component4 />,
 };
 
-interface HomepageProps {
-  collection: CollectionItem[];
-}
 
-const Homepage: React.FC<HomepageProps> = ({ collection }) => {
+
+const Homepage = () => {
+  const { collection, loading, error } = useCollection();
+
   return (
     <>
       {collection.map((item, itemIndex) => (

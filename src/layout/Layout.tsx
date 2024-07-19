@@ -1,19 +1,28 @@
-import React, { ReactNode } from 'react'
-import HeaderComponent from './header/Header'
-import FooterComponent from './footer/Footer'
+"use client";
+import React, { ReactNode } from 'react';
+
+import useCollection from '@/service/api';
+import FooterComponent from './footer/Footer';
+import HeaderComponent from './header/Header';
 
 export type LayoutProps = {
-    children: ReactNode;
-  }; 
+  children: ReactNode;
+};
 
-const HomePageLayout = ({children}: LayoutProps) => {
+const HomePageLayout: React.FC<LayoutProps> = ({ children }) => {
+  const { collection }:any = useCollection();
+  
+  const headerLogo = collection.length > 0 ? collection[0].attributes.header : null;
+
+  console.log('Header Logo', headerLogo);
+
   return (
     <>
-      <HeaderComponent />
+      <HeaderComponent headerData={headerLogo} />
       {children}
       <FooterComponent />
     </>
-  )
-}
+  );
+};
 
-export default HomePageLayout
+export default HomePageLayout;
