@@ -1,11 +1,19 @@
 "use client";
 import React from "react";
-import { LogoImage, MenuIcons, MenusItems, Warrper } from "./Header.styled";
+import {  MenuIcons, MenusItems, Warrper } from "./Header.styled";
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ headerData }:any) => {
+  console.log('headerData', headerData);
+  
+  if (!headerData) {
+    return null;
+  }
+
+  const { logo } = headerData;
+  console.log('logo', logo);
+
   return (
     <Warrper>
-      <LogoImage src="images/Logo.png" alt="no logo" />
       <MenusItems href='#'>
         <li>Home</li>
         <li>About</li>
