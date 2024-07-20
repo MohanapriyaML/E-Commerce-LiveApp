@@ -5,14 +5,14 @@ const useCollection = () => {
   const [collection, setCollection] = useState<CollectionItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const itemId = 3;
+  const itemId = 5;
 console.log('collection',collection);
 
   useEffect(() => {
     const fetchCollection = async () => {
       try {
         const response = await fetch(
-          `https://strong-bee-4932a093ba.strapiapp.com/api/e-commerces/${itemId}?populate[header][populate]=logo,NavMenu,NavIcon&populate[body][populate]=productImage,button&populate[footer][populate]=footer`
+          `https://strong-bee-4932a093ba.strapiapp.com/api/e-commerces/${itemId}?populate[header][populate]=logo,NavMenu,NavIcon,image&populate[body][populate]=productImage,button&populate[footer][populate]=footer`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

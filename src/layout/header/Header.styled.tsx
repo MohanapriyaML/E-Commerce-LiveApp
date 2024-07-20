@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 export const Warrper = styled.div`
   width: 100%;
-  height: 70px;
+  height: 100px;
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 100px 0 10px;
+  padding: 0 100px 10px 40px;
 `;
 
 export const LogoImage = styled.img`
