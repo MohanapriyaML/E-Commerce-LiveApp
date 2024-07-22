@@ -1,39 +1,56 @@
 "use client";
-import React from "react";
-import { MenuIcons, MenusItems, Warrper } from "./Header.styled";
-import UiImage from 'genpixels_ui_components/src/ui-components/image/UiImage'
+import React, { useState } from "react";
+import { LogoImage, MenuIcon, NavIcons, NavItems, Wrapper } from "./Header.styled";
+import { FaRegHeart, FaRegUser } from "react-icons/fa";
+import { IoSearch } from "react-icons/io5";
+import { PiShoppingCartBold } from "react-icons/pi";
+import Link from "next/link";
 
 const HeaderComponent = ({ headerData }: any) => {
-  console.log('headerData', headerData);
+  const [isMobile, setIsMobile] = useState(false);
 
   if (!headerData) {
     return null;
   }
 
-  const { NavMenu, NavIcon, image } = headerData;
-  console.log('logo', image);
-  console.log('Menu', NavMenu);
-  console.log('Icon', NavIcon);
+  const toggleMenu = () => {
+    setIsMobile(!isMobile);
+  };
 
+  const { NavMenu, NavIcon, image } = headerData;
   const imagedata = image?.data?.[0]?.attributes?.url;
-  const {Home,Shop, About, Contact} = NavMenu;
+
+  const navItems = [
+    { name: NavMenu.Home, href: "#" },
+    { name: NavMenu.Shop, href: "#" },
+    { name: NavMenu.About, href: "#" },
+    { name: NavMenu.Contact, href: "#" },
+  ];
+
+  const navIcons = [
+    { show: NavIcon.UserIcon, icon: <FaRegUser /> },
+    { show: NavIcon.SearchIcon, icon: <IoSearch /> },
+    { show: NavIcon.FavoriteIcon, icon: <FaRegHeart /> },
+    { show: NavIcon.Cart, icon: <PiShoppingCartBold /> },
+  ];
 
   return (
-    <Warrper>
-      <UiImage src={imagedata} height={41} width={185} alt="logo"></UiImage>
-      <MenusItems href='#'>
-        <li>{Home}</li>
-        <li>{About}</li>
-        <li>{Shop}</li>
-        <li>{Contact}</li>
-      </MenusItems>
-      <MenuIcons>
-        <li>Icon1</li>
-        <li>Icon2</li>
-        <li>Icon3</li>
-        <li>Icon4</li>
-      </MenuIcons>
-    </Warrper>
+    <Wrapper>
+      <LogoImage src={imagedata} alt="logo" />
+      <NavItems isMobile={isMobile}>
+        {navItems.map((item, index) => (
+          <li key={index}>
+            <Link href={item.href}>{item.name}</Link>
+          </li>
+        ))}
+      </NavItems>
+      <NavIcons isMobile={isMobile}>
+        {navIcons.map(
+          (item, index) => item.show && <li key={index}>{item.icon}</li>
+        )}
+      </NavIcons>
+      <MenuIcon onClick={toggleMenu} />
+    </Wrapper>
   );
 };
 

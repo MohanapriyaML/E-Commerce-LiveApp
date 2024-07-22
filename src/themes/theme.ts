@@ -5,6 +5,7 @@ export interface Theme {
         primary: string;
         secondary: string;
         accent: string;
+        lightgrey:string;
     };
     fonts: {
         body: string;
@@ -19,6 +20,7 @@ export const theme: Theme = {
         accent: "#ffc107",
         white: "#fff",
         black: "#000",
+        lightgrey:"#9F9F9F"
     },
     fonts: {
         body: "Arial, sans-serif",
