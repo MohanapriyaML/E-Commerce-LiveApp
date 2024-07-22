@@ -12,7 +12,7 @@ console.log('collection',collection);
     const fetchCollection = async () => {
       try {
         const response = await fetch(
-          `https://strong-bee-4932a093ba.strapiapp.com/api/e-commerces/${itemId}?populate[header][populate]=logo,NavMenu,NavIcon,image&populate[body][populate]=productImage,button&populate[footer][populate]=footer`
+          `https://strong-bee-4932a093ba.strapiapp.com/api/e-commerces/${itemId}?populate[header][populate]=logo,NavMenu,NavIcon,image&populate[body][populate]=productImage,bannerImage,button&populate[footer][populate]=footer,image`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

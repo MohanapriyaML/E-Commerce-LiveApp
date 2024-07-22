@@ -14,13 +14,16 @@ const HomePageLayout: React.FC<LayoutProps> = ({ children }) => {
   
   const headerLogo = collection.length > 0 ? collection[0].attributes.header : null;
 
+  const footerData = collection.length > 0 ? collection[0].attributes.footer : null;
+
+
   console.log('Header Logo', headerLogo);
 
   return (
     <>
       <HeaderComponent headerData={headerLogo} />
       {children}
-      <FooterComponent />
+      <FooterComponent footerData= {footerData}/>
     </>
   );
 };
