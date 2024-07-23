@@ -7,19 +7,19 @@ export const Container = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 20px;
-  padding: 0 7%;
+  // padding: 0 7%;
   box-sizing: border-box;
 
   ${breakpoints.xs} 
   {
     grid-template-columns: 1fr;
-    padding: 0 5%;
+    // padding: 0 5%;
   }
 
   ${breakpoints.sm}
    {
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0 5%;
+    // padding: 0 5%;
   }
 
   ${breakpoints.md} 
@@ -32,14 +32,14 @@ export const Container = styled.div`
   {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
-    padding: 0 5%;
+    // padding: 0 5%;
   }
 
   ${breakpoints.xl} 
   {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
-    padding: 0 7%;
+    // padding: 0 7%;
   }
 `;
 
