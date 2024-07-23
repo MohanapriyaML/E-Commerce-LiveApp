@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import UiTypography from 'genpixels_ui_components/src/ui-components/typography/UiTypography';
 import breakpoints from "@/themes/breakpoints";
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
-
   box-sizing: border-box;
   row-gap: 80px;
   
@@ -38,11 +36,11 @@ export const Container = styled.div`
 
 export const Headings = styled.div`
   text-align: center;
-
   h1 {
     font-size: 32px;
     font-weight:bold;
     line-height: 48px;
+    margin-top:20px;
     margin-bottom: 10px;
   }
 
@@ -126,12 +124,13 @@ export const BrowserItem = styled.div`
   width: 100%;
 `;
 
-export const Titletypo = styled(UiTypography)`
-  font-size: 24px;
-  font-weight: 600;
+export const Titletypo = styled('p')`
+  font-size: 100px;
+   font-weight:bold;
   line-height: 36px;
   margin-top:20px;
   color: black;
+
   display: flex;
   text-align: center;
   justify-content: center;

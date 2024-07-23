@@ -27,7 +27,7 @@ const ProductsList = ({ bannerData }: any) => {
   return (
     <div className="body-gap">
       <Headings>
-        {bannerData?.[3]?.heading}
+        <p>{bannerData?.[3]?.heading}</p>
       </Headings>
       <Container>
         {products && products.map((product : any, index : any) => {
@@ -53,8 +53,8 @@ const ProductsList = ({ bannerData }: any) => {
                 </HoverOverlay>
               </StyledImageWrapper>
               <ProductName>
-                <CardTypo>{product.text}</CardTypo>
-                <Subtypo>{product.subText}</Subtypo>
+                <CardTypo><p>{product.text}</p></CardTypo>
+                <Subtypo><p>{product.subText}</p></Subtypo>
               </ProductName>
               <Price>{product.price}</Price>
             </ProductItem>

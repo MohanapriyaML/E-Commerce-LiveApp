@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import UiTypography from 'genpixels_ui_components/src/ui-components/typography/UiTypography';
 import breakpoints from '@/themes/breakpoints';
 
 export const Container = styled.div`
@@ -9,6 +8,7 @@ export const Container = styled.div`
   gap: 20px;
   // padding: 0 7%;
   box-sizing: border-box;
+  cursor: pointer;
 
   ${breakpoints.xs} 
   {
@@ -57,14 +57,16 @@ export const Buttons = styled.div`
     height: 48px;
     margin: 40px auto 0;
     display: block;
+    cursor: pointer;
   }
 `;
 
 export const Headings = styled.div`
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 40px;
   margin-top:80px;
+  font-weight:bold;
 `;
 
 export const StyledImageWrapper = styled.div`
@@ -190,7 +192,7 @@ export const TagsContainer = styled.div`
   gap: 20px;
 `;
 
-export const CardTypo = styled(UiTypography)`
+export const CardTypo = styled('p')`
   color: black;
   font-weight: bold;
   display: flex;
@@ -201,12 +203,12 @@ export const CardTypo = styled(UiTypography)`
   margin-left: 15px;
 `;
 
-export const Subtypo = styled(UiTypography)`
+export const Subtypo = styled('p')`
   color: black;
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   margin-left: 15px;
 `;
 
