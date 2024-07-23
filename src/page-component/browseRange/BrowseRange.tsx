@@ -11,8 +11,8 @@ const BrowseList = ({ bannerData }:any) => {
     <div className="body-gap">
       <BrowserItem>
         <Headings>
-          <div>{bannerData?.[1]?.heading}</div>
-          {bannerData?.[1]?.description}
+          <div> <h1>{bannerData?.[1]?.heading}</h1></div>
+          <p>{bannerData?.[1]?.description}</p>
         </Headings>
         <Container>
           {products && products.map((product : any, index : any) => {
