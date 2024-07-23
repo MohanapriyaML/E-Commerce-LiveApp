@@ -14,9 +14,9 @@ type ComponentMapType = {
 
 const componentMap = (bodyData: any): ComponentMapType => ({
   1: <BannerComponent bannerData={bodyData} />,
-  2: <BrowseList />,
+  2: <BrowseList bannerData={bodyData}/>,
   3: <CarouselComponent bannerData={bodyData} />,
-  4: <Products />,
+  4: <Products bannerData={bodyData}/>,
 });
 
 const Homepage = () => {

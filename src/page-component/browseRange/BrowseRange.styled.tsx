@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
-  padding: 0 7%;
+
   box-sizing: border-box;
   row-gap: 80px;
   
@@ -32,7 +32,7 @@ export const Container = styled.div`
   ${breakpoints.xl}
    {
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    column-gap: 0px;
   }
 `;
 
@@ -47,6 +47,7 @@ export const Headings = styled.div`
   }
 
   p {
+  
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
@@ -61,6 +62,7 @@ export const Headings = styled.div`
     }
 
     p {
+    margin-left:20px;
       font-size: 16px;
       line-height: 24px;
     }
@@ -191,8 +193,9 @@ export const ImageUi = styled.img`
   }
   ${breakpoints.xl}
    {
-    paddig:0 7%
-    object-fit: cover;
+    width:350px;
+    height:450px;
+    object-fit: contain;
     margin: auto;
   }
 `;

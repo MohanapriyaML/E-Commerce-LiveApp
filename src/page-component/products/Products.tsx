@@ -1,86 +1,70 @@
 import React from 'react';
-import { FaShareAlt, FaRegHeart, FaRegCopy } from 'react-icons/fa';
-import { Headings, Container, ProductItem, StyledImageWrapper, StyledImage, ProductName, Price, CardTypo, Subtypo, OfferLabel, Buttons, HoverOverlay, HoverButton, HoverTag, TagsContainer } from './Products.styled';
+import { FaShareAlt, FaRegHeart } from 'react-icons/fa';
 import { MdCompareArrows } from 'react-icons/md';
+import {
+  Headings,
+  Container,
+  ProductItem,
+  StyledImageWrapper,
+  StyledImage,
+  ProductName,
+  Price,
+  CardTypo,
+  Subtypo,
+  OfferLabel,
+  Buttons,
+  HoverOverlay,
+  HoverButton,
+  HoverTag,
+  TagsContainer
+} from './Products.styled';
 
-interface Products {
-  id: number;
-  title: string;
-  subtitle: string;
-  price: string;
-  imageUrl: string;
-  offer?: string;
-}
+const ProductsList = ({ bannerData }: any) => {
+  console.log('bannerData', bannerData);
 
-const ProductsList = () => {
-  const products: Products[] = [
-    { id: 1, title: 'Syltherine', subtitle: 'Stylish cafe chair', price: 'Rp 2.500.000', imageUrl: '/images/2.1.png', offer: '-30%' },
-    { id: 2, title: 'Leviosa', subtitle: 'Stylish cafe chair', price: 'Rp 2.500.000', imageUrl: '/images/2.2.png' },
-    { id: 3, title: 'Lolito', subtitle: 'Luxury big sofa', price: 'Rp 7.000.000', imageUrl: '/images/2.3.png', offer: '-50%' },
-    { id: 4, title: 'Respira', subtitle: 'Outdoor bar table and stool', price: 'Rp 500.000', imageUrl: '/images/2.4.png', offer: 'New' },
-    { id: 5, title: 'Grifo', subtitle: 'Night lamp', price: 'Rp 1.500.000', imageUrl: '/images/2.5.png' },
-    { id: 6, title: 'Muggo', subtitle: 'Small mug', price: 'Rp 150.000', imageUrl: '/images/2.6.png', offer: 'New' },
-    { id: 7, title: 'Pingky', subtitle: 'Cute bed set', price: 'Rp 7.000.000', imageUrl: '/images/2.7.png', offer: '-50%' },
-    { id: 8, title: 'Potty', subtitle: 'Minimalist flower pot', price: 'Rp 500.000', imageUrl: '/images/2.8.png', offer: 'New' },
-  ];
+  const products = bannerData?.[3]?.productImage;
 
   return (
-    <>
+    <div className="body-gap">
       <Headings>
-        <h1><b>Our Products</b></h1>
+        {bannerData?.[3]?.heading}
       </Headings>
-
       <Container>
-        {products.map((product) => (
-          <ProductItem key={product.id}>
-
-            <StyledImageWrapper>
-              <StyledImage src={product.imageUrl} alt={product.title}/>
-
-              {product.offer && <OfferLabel offerType={product.offer}>{product.offer}</OfferLabel>}
-
-              <HoverOverlay>
-                            <HoverButton>Add to Cart</HoverButton>
-
+        {products && products.map((product : any, index : any) => {
+          const productImage = product.bannerImage?.data?.[0]?.attributes.url;
+          return (
+            <ProductItem key={index}>
+              <StyledImageWrapper>
+                <StyledImage src={productImage} alt={product.text} />
+                {product.offer && <OfferLabel>{product.offer}</OfferLabel>}
+                <HoverOverlay>
+                  <HoverButton>Add to Cart</HoverButton>
                   <TagsContainer>
-
-                        <HoverTag>
-                                <FaShareAlt/>Share
-                        </HoverTag>
-
-                        <HoverTag>
-                                <MdCompareArrows/>Compare
-                        </HoverTag>
-
-                        <HoverTag>
-                                <FaRegHeart/>Like
-                        </HoverTag>
-
-                </TagsContainer>
-
-              </HoverOverlay>
-
-            </StyledImageWrapper>
-
-
-            <div>
+                    <HoverTag>
+                      <FaShareAlt /> Share
+                    </HoverTag>
+                    <HoverTag>
+                      <MdCompareArrows /> Compare
+                    </HoverTag>
+                    <HoverTag>
+                      <FaRegHeart /> Like
+                    </HoverTag>
+                  </TagsContainer>
+                </HoverOverlay>
+              </StyledImageWrapper>
               <ProductName>
-                <CardTypo>{product.title}</CardTypo>
-                <Subtypo>{product.subtitle}</Subtypo>
-
-
-          </ProductName>
-            </div>
-             <Price>{product.price}</Price>
-          </ProductItem>
-        ))}
+                <CardTypo>{product.text}</CardTypo>
+                <Subtypo>{product.subText}</Subtypo>
+              </ProductName>
+              <Price>{product.price}</Price>
+            </ProductItem>
+          );
+        })}
       </Container>
-
       <Buttons>
         <button>Show more</button>
       </Buttons>
-      
-    </>
+    </div>
   );
 };
 
