@@ -63,7 +63,7 @@ export const Buttons = styled.div`
 
 export const Headings = styled.div`
   text-align: center;
-  font-size: 24px;
+  font-size: 35px;
   margin-bottom: 40px;
   margin-top:80px;
   font-weight:bold;

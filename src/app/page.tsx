@@ -4,6 +4,7 @@ import { CollectionItem } from "@/page-component/homepage/types";
 import useCollection from "@/service/api";
 import React, { useEffect, useState } from "react";
 
+
 const Home: React.FC = () => {
   const [collection, setCollection] = useState<CollectionItem[]>([]);
   const itemId = 97;
