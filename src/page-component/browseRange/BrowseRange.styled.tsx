@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import breakpoints from "@/themes/breakpoints";
 import UiTypography from "genpixels_ui_components/src/ui-components/typography/UiTypography";
+import { theme } from "@/themes/theme";
 
 export const Container = styled.div`
   display: grid;
@@ -50,6 +51,7 @@ export const DesUiTypography = styled(UiTypography)`
   font-weight: 600;
   line-height: 30px;
   margin-bottom: 40px !important;
+  color:${theme.colors.mediumgray};
   ${breakpoints.xs} {
     margin-left: 20px;
     font-size: 16px;

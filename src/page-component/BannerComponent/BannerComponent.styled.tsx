@@ -2,9 +2,10 @@ import styled from "styled-components";
 import UiButton from "genpixels_ui_components/src/ui-components/button/UiButton";
 import UiTypography from "genpixels_ui_components/src/ui-components/typography/UiTypography";
 import breakpoints from "@/themes/breakpoints";
+import { theme } from "@/themes/theme";
 
 export const SubDiv = styled.div`
-  background-color: #fff3e3;
+  background-color: ${theme.colors.babypink};
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -59,7 +60,7 @@ export const NewTypography = styled(UiTypography)`
 `;
 export const OurTypography = styled(UiTypography)`
   font-weight: 700 !important;
-  color: #b88e2f !important;
+  color: ${theme.colors.sandle}!important;
   ${breakpoints.xs} {
     line-height: 18px;
     font-size: 19px;
@@ -101,8 +102,8 @@ export const LoTypography = styled(UiTypography)`
 `;
 
 export const StyledButton = styled(UiButton)`
-  background-color: #b88e2f !important;
-  color: #ffffff;
+  background-color:  ${theme.colors.sandle} !important;
+  color:  ${theme.colors.white};
   font-weight: 700 !important;
   border: none;
   border-radius: 0 !important;

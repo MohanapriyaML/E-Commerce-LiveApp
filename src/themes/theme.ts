@@ -6,6 +6,14 @@ export interface Theme {
         secondary: string;
         accent: string;
         lightgrey:string;
+        babypink:string;
+        sandle:string;
+        pink:string;
+        lightwhite:string;
+        lightblack:string;
+        grey:string;
+        mediumgray:string;
+        darkgrey:string;
     };
     fonts: {
         body: string;
@@ -20,7 +28,15 @@ export const theme: Theme = {
         accent: "#ffc107",
         white: "#fff",
         black: "#000",
-        lightgrey:"#9F9F9F"
+        lightgrey:"#9F9F9F",
+        babypink:"#FFF3E3",
+        sandle:"#B88E2F",
+        pink:"#fcf8f3",
+        lightwhite:"#FFFFFFB8",
+        lightblack:"#3A3A3A80",
+        grey:"#ddd",
+        mediumgray:"#898989",
+        darkgrey:"#616161"
     },
     fonts: {
         body: "Arial, sans-serif",

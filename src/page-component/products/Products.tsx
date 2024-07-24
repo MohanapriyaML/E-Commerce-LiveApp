@@ -18,7 +18,6 @@ import {
   TagsContainer,
   HeadTypo,
 } from "./Products.styled";
-import UiTypography from "genpixels_ui_components/src/ui-components/typography/UiTypography";
 
 const ProductsList = ({ bannerData }: any) => {
   const products = bannerData?.[3]?.productImage;
@@ -27,6 +26,36 @@ const ProductsList = ({ bannerData }: any) => {
     <div className="body-gap">
         <HeadTypo variant='h3'>{bannerData?.[3]?.heading}</HeadTypo>
       <Container>
+        {products && products.map((product : any, index : any) => {
+          const productImage = product.bannerImage?.data?.[0]?.attributes.url;
+          return (
+            <ProductItem key={index}>
+              <StyledImageWrapper>
+                <StyledImage src={productImage} alt={product.text} />
+                {product.offer && <OfferLabel>{product.offer}</OfferLabel>}
+                <HoverOverlay>
+                  <HoverButton>Add to Cart</HoverButton>
+                  <TagsContainer>
+                    <HoverTag>
+                      <FaShareAlt /> Share
+                    </HoverTag>
+                    <HoverTag>
+                      <MdCompareArrows /> Compare
+                    </HoverTag>
+                    <HoverTag>
+                      <FaRegHeart /> Like
+                    </HoverTag>
+                  </TagsContainer>
+                </HoverOverlay>
+              </StyledImageWrapper>
+              <ProductName>
+                <CardTypo variant='h6'>{product.text}</CardTypo>
+                <Subtypo><p>{product.subText}</p></Subtypo>
+                <Price>{product.price}</Price>
+              </ProductName>
+            </ProductItem>
+          );
+        })}
         {products &&
           products.map((product: any, index: any) => {
             const productImage = product.bannerImage?.data?.[0]?.attributes.url;

@@ -104,6 +104,7 @@ export const NavIcons = styled.ul<MenuProps>`
   ${breakpoints.xs}{
     display: ${({ isMobile }) => (isMobile ? "flex" : "none")};
     position:absolute;
+    z-index:999;
     top:240px;
     padding-top:10px;
     background:${theme.colors.white};
