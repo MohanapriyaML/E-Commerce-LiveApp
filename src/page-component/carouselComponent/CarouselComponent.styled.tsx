@@ -14,7 +14,8 @@ export const MainContainer = styled.div`
 
   ${breakpoints.xs} {
     top: 0px;
-    padding-bottom: 0px;
+    margin-top: 100px;
+    padding-bottom: 30px;
     flex-direction: column;
   }
   ${breakpoints.md} {
@@ -23,12 +24,12 @@ export const MainContainer = styled.div`
   }
   ${breakpoints.lg} {
     padding-top: 25px;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     flex-direction: row;
   }
   ${breakpoints.xl} {
+    margin-top: 0px;
     padding-top: 25px;
-    padding-bottom: 25px;
   }
 `;
 
@@ -54,18 +55,14 @@ export const ContentDiv = styled.div`
     margin-top: 50px;
     margin-left: 120px;
   }
-    ${breakpoints.lg} { 
-     width: 200px;
-    height: 200px;
-    margin-top: 50px;
-    margin-left: 30px;
-    }
-    ${breakpoints.xl} { 
-     width: 350px;
-    height: 200px;
-    margin-top: 50px;
-    margin-left: 60px;
-    }
+  ${breakpoints.lg} {
+    width: 200px;
+    margin-top: 160px;
+    margin-left: 0px;
+  }
+  ${breakpoints.xl} {
+    width: 350px;
+  }
 `;
 export const HeadTypography = styled(UiTypography)`
   font-weight: 700 !important;
@@ -107,7 +104,7 @@ export const DescTypography = styled(UiTypography)`
   }
   ${breakpoints.xl} {
     font-size: 16px;
-     line-height: 25px;
+    line-height: 25px;
   }
 `;
 export const ButtonStyled = styled(UiButton)`
@@ -123,12 +120,6 @@ export const ButtonStyled = styled(UiButton)`
     width: 100px;
   }
   ${breakpoints.md} {
-    height: 50px;
-    top: 10px;
-    font-size: 12px !important;
-    width: 150px;
-  }
-  ${breakpoints.lg} {
     height: 50px;
     top: 10px;
     font-size: 12px !important;
@@ -158,25 +149,24 @@ export const ImageDiv = styled.div`
     }
   }
   ${breakpoints.md} {
-    padding-right: 0px;
     padding-left: 120px;
     margin-top: 70px;
   }
   ${breakpoints.lg} {
     padding-left: 0px;
     margin-top: 40px;
-    left: 150px;
-     .rectangle-Img {
-    height: 100%;
-    width: 75%;
-  }
+    left: 135px;
+    .rectangle-Img {
+      height: 100%;
+      width: 75%;
+    }
   }
   ${breakpoints.xl} {
     left: 200px;
-     .rectangle-Img {
-    height: 100%;
-    width: 85%;
-  }
+    .rectangle-Img {
+      height: 100%;
+      width: 85%;
+    }
   }
 `;
 export const SubPart = styled.div`
@@ -209,10 +199,15 @@ export const ChildDiv = styled.div`
     height: 170px;
     padding: 55px;
   }
-    ${breakpoints.lg} {
+  ${breakpoints.lg} {
     line-height: 25px;
     height: 90px;
     padding: 15px;
+  }
+  ${breakpoints.xl} {
+    line-height: 15px;
+    height: 110px;
+    padding: 35px;
   }
 `;
 export const BedTypography = styled(UiTypography)`
@@ -221,7 +216,7 @@ export const BedTypography = styled(UiTypography)`
     font-size: 22px;
     margin-top: 0px !important;
   }
-    ${breakpoints.lg} {
+  ${breakpoints.lg} {
     font-size: 15px;
     margin-top: 0px !important;
   }
@@ -234,7 +229,7 @@ export const InnerTypography = styled(UiTypography)`
     font-size: 22px;
     line-height: 38px;
   }
-     ${breakpoints.lg} {
+  ${breakpoints.lg} {
     font-size: 20px;
     line-height: 28px;
   }
@@ -258,39 +253,44 @@ export const ArrowDiv = styled.div`
     top: 120px;
     padding: 15px;
   }
-    ${breakpoints.lg} {
+  ${breakpoints.lg} {
     height: 30px;
     width: 30px;
     top: 60px;
     padding: 5px;
   }
+  ${breakpoints.xl} {
+    height: 30px;
+    width: 30px;
+    top: 80px;
+    padding: 5px;
+  }
 `;
 export const CarouselDiv = styled.div`
-position: relative; 
-  .carouselImage{
-  height:100%;
-  width:100%;
+  position: relative;
+  .carouselImage {
+    height: 100%;
+    width: 100%;
   }
   ${breakpoints.xs} {
-   width: 300px;
+    width: 300px;
     margin-top: 30px;
     margin-left: 45px;
     padding-bottom: 30px;
   }
-    ${breakpoints.md} {
+  ${breakpoints.md} {
     width: 515px;
     margin-top: 40px;
-    margin-left: 120px;
+    margin-left: 80px;
     padding-bottom: 30px;
   }
-    ${breakpoints.lg} {
+  ${breakpoints.lg} {
     width: 300px;
-    margin-top: 40px;
-    margin-left: 70px;
+    margin-left: 0px;
+    left: 50px;
     padding-bottom: 0px;
   }
-     ${breakpoints.xl} {
-    margin-top: 40px;
+  ${breakpoints.xl} {
     margin-left: 250px;
-     }
+  }
 `;

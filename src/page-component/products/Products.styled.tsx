@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 import breakpoints from '@/themes/breakpoints';
 import { theme } from '@/themes/theme';
@@ -11,24 +12,19 @@ export const Container = styled.div`
   box-sizing: border-box;
   cursor: pointer;
 
-  ${breakpoints.xs} 
-  {
+  ${breakpoints.xs} {
     grid-template-columns: 1fr;
   }
 
-  ${breakpoints.sm}
-   {
+  ${breakpoints.sm} {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  ${breakpoints.md} 
-  {
-    grid-template-columns: 1fr 1fr 1fr;
+  ${breakpoints.md} {
     gap: 20px;
   }
 
-  ${breakpoints.lg} 
-  {
+  ${breakpoints.lg} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
   }
@@ -45,7 +41,7 @@ export const Buttons = styled.div`
   button
    {
     background: ${theme.colors.white};
-    color: rgba(184, 142, 47, 1);
+    color: ${theme.colors.sandle};
     border:1px solid ${theme.colors.sandle};
     font-size: 16px;
     font-weight: bold;
@@ -58,12 +54,11 @@ export const Buttons = styled.div`
   }
 `;
 
-export const Headings = styled.div`
-  text-align: center;
-  font-size: 35px;
-  margin-bottom: 40px;
-  margin-top:80px;
-  font-weight:bold;
+export const HeadTypo = styled(UiTypography)`
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  margin-top: 80px !important;
+  font-weight: 600 !important;
 `;
 
 export const StyledImageWrapper = styled.div`
@@ -85,7 +80,7 @@ export const HoverOverlay = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap:1px;
+  gap: 1px;
   opacity: 0;
   transition: opacity 0.3s;
 `;
@@ -97,13 +92,11 @@ export const ProductItem = styled.div`
   padding: 0;
   margin: 0;
 
-  &:hover ${HoverOverlay} 
-  {
+  &:hover ${HoverOverlay} {
     opacity: 1;
   }
 
-  ${breakpoints.lg} 
-  {
+  ${breakpoints.lg} {
     margin: 0 5%;
   }
 `;
@@ -114,26 +107,7 @@ export const StyledImage = styled.img`
   object-fit: cover;
   margin: 0;
 
-  ${breakpoints.xs}
-   {
-    object-fit: cover;
-    margin: auto;
-  }
-  ${breakpoints.sm} 
-  {
-    object-fit: cover;
-  }
-  ${breakpoints.md} 
-  {
-    object-fit: cover;
-  }
-  ${breakpoints.lg} 
-  {
-    object-fit: cover;
-  }
-  ${breakpoints.xl}
-   {
-    object-fit: cover;
+  ${breakpoints.xs} {
     margin: auto;
   }
 `;
@@ -152,16 +126,16 @@ export const OfferLabel = styled.div<{ offerType?: string }>`
   justify-content: center;
   text-align: center;
   background-color: ${({ offerType }) =>
-    offerType === 'New'
-      ? 'rgba(46, 193, 172, 1)'
-      : (offerType === '-30%' || offerType === '-50%')
-      ? 'rgba(233, 113, 113, 1)'
-      : 'rgba(233, 113, 113, 1)'};
+    offerType === "New"
+      ? "rgba(46, 193, 172, 1)"
+      : offerType === "-30%" || offerType === "-50%"
+      ? "rgba(233, 113, 113, 1)"
+      : "rgba(233, 113, 113, 1)"};
 `;
 
 export const HoverButton = styled.button`
   background: rgba(255, 255, 255, 1);
-  margin-top:180px;
+  margin-top: 180px;
   color: rgba(184, 142, 47, 1);
   font-size: 16px;
   font-weight: bold;
@@ -182,8 +156,8 @@ export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom:220px;
-  margin-top:20px;
+  margin-bottom: 220px;
+  margin-top: 20px;
   gap: 20px;
 `;
 
@@ -201,7 +175,7 @@ export const Subtypo = styled('p')`
   font-weight: 400;
   line-height: 24px;
   margin-bottom: 10px;
-  margin-left: 15px;
+  margin-left: 15px !important;
 `;
 
 export const Price = styled.div`
