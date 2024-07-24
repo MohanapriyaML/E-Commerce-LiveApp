@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import breakpoints from "@/themes/breakpoints";
+import UiTypography from "genpixels_ui_components/src/ui-components/typography/UiTypography";
 
 export const Container = styled.div`
   display: grid;
@@ -7,161 +8,96 @@ export const Container = styled.div`
   gap: 16px;
   box-sizing: border-box;
   row-gap: 80px;
-  
-  ${breakpoints.sm} 
-  {
-    grid-template-columns: 1fr;
-  }
 
-  ${breakpoints.md} 
-  {
+  ${breakpoints.md} {
     grid-template-columns: 1fr 1fr;
-    row-gap: 80px;
-   
   }
 
-  ${breakpoints.lg} 
-  {
+  ${breakpoints.lg} {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    
   }
 
-  ${breakpoints.xl}
-   {
+  ${breakpoints.xl} {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 0px;
   }
 `;
 
-export const Headings = styled.div`
+export const HdUiTypography = styled(UiTypography)`
   text-align: center;
-  h1 {
+  font-size: 32px;
+  font-weight: bold !important;
+  line-height: 48px;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  ${breakpoints.xs} {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  ${breakpoints.sm} {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  ${breakpoints.md} {
     font-size: 32px;
-    font-weight:bold;
     line-height: 48px;
-    margin-top:20px;
-    margin-bottom: 10px;
-  }
-
-  p {
-  
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    margin-bottom: 40px;
-  }
-
-  ${breakpoints.xs} 
-  {
-    h1 {
-      font-size: 24px;
-      line-height: 36px;
-    }
-
-    p {
-    margin-left:20px;
-      font-size: 16px;
-      line-height: 24px;
-    }
-  }
-
-  ${breakpoints.sm} 
-  {
-    h1 {
-      font-size: 28px;
-      line-height: 40px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 28px;
-    }
-  }
-
-  ${breakpoints.md} 
-  {
-    h1 {
-      font-size: 32px;
-      line-height: 48px;
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 30px;
-    }
-  }
-
-  ${breakpoints.lg} 
-  {
-    h1 {
-      font-size: 32px;
-      line-height: 48px;
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 30px;
-    }
-  }
-
-  ${breakpoints.xl}
-   {
-    h1 {
-      font-size: 32px;
-      line-height: 48px;
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 30px;
-    }
   }
 `;
+export const DesUiTypography = styled(UiTypography)`
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 40px !important;
+  ${breakpoints.xs} {
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 24px;
+  }
 
+  ${breakpoints.sm} {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  ${breakpoints.md} {
+    font-size: 20px;
+    line-height: 30px;
+  }
+`;
 export const BrowserItem = styled.div`
   text-align: center;
   width: 100%;
 `;
 
-export const Titletypo = styled('p')`
+export const Titletypo = styled(UiTypography)`
   font-size: 100px;
-   font-weight:bold;
+  font-weight: 600 !important;
   line-height: 36px;
-  margin-top:20px;
+  margin-top: 20px;
+  margin-bottom:20px !important;
   color: black;
-
   display: flex;
   text-align: center;
   justify-content: center;
 
-  ${breakpoints.xs} 
-  {
+  ${breakpoints.xs} {
     font-size: 18px;
     line-height: 28px;
   }
 
-  ${breakpoints.sm} 
-  {
+  ${breakpoints.sm} {
     font-size: 20px;
     line-height: 30px;
   }
 
-  ${breakpoints.md} 
-  {
+  ${breakpoints.md} {
     font-size: 22px;
     line-height: 32px;
-    margin-bottom:50px;
+    margin-bottom: 50px;
   }
 
-  ${breakpoints.lg}
-   {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  ${breakpoints.xl}
-   {
+  ${breakpoints.lg} {
     font-size: 24px;
     line-height: 36px;
   }
@@ -171,30 +107,18 @@ export const ImageUi = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  margin: 0;
+  margin-top:20px !important;
 
-  ${breakpoints.xs}
-   {
-    object-fit: cover;
+  ${breakpoints.xs} {
     margin: auto;
   }
-  ${breakpoints.sm} 
-  {
+
+  ${breakpoints.lg} {
     object-fit: cover;
   }
-  ${breakpoints.md} 
-  {
-    object-fit: cover;
-  }
-  ${breakpoints.lg} 
-  {
-    object-fit: cover;
-  }
-  ${breakpoints.xl}
-   {
-    width:350px;
-    height:450px;
+  ${breakpoints.xl} {
+    width: 350px;
+    height: 450px;
     object-fit: contain;
-    margin: auto;
   }
 `;
