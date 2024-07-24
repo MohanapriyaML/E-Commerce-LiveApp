@@ -62,6 +62,7 @@ export const NavItems = styled('div') <MenuProps>`
     ${breakpoints.xs}{
       display: ${({ isMobile }) => (isMobile ? "block" : "none")};
       position:absolute;
+      z-index:999;
       top:70px;
       background:${theme.colors.white};
       width:390px;
@@ -84,7 +85,7 @@ export const NavItems = styled('div') <MenuProps>`
     }
     ${breakpoints.xl}{
       a{
-       font-size:22px;
+       font-size:18px;
       }
     }
 `;
@@ -129,7 +130,7 @@ export const NavIcons = styled.ul<MenuProps>`
   ${breakpoints.xl}{
     padding-left:245px;
     li{
-     font-size:25px;
+     font-size:20px;
     }
   }
 `;

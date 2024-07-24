@@ -10,7 +10,7 @@ export const SubDiv = styled.div`
   flex-direction: column;
   gap: 5px;
   ${breakpoints.xs} {
-  top: 60px;
+  top: 130px;
   line-height: 20px;
   height: 133px;
   width: 180px;
@@ -18,7 +18,7 @@ export const SubDiv = styled.div`
   right: 3%;
   }
   ${breakpoints.md} {
-  top:150px;
+  top:220px;
   line-height: 30px;
   height: 200px;
   width: 300px;
@@ -26,7 +26,7 @@ export const SubDiv = styled.div`
   right: 10%;
   }
   ${breakpoints.lg} {
-  top: 180px;
+  top: 250px;
   line-height: 33px;
   height: 270px;
   width: 380px;
@@ -34,15 +34,15 @@ export const SubDiv = styled.div`
   right: 11%;
   }
   ${breakpoints.xl} {
-  top: 265px;
+  top: 330px;
   line-height: 33px;
   height: 363px;
   width: 550px;
   padding: 30px;
-  right: 12%;
+  right: 11%;
   }
   ${breakpoints['2xl']} {
-  top: 300px;
+  top: 370px;
   right: 13%;
   }
 `;
