@@ -1,5 +1,6 @@
 import React from "react";
 import { BottomFotter, Footerwrapper, Maindiv, TypoPara } from "./Footer.styled";
+import UiTypography from "genpixels_ui_components/src/ui-components/typography/UiTypography";
 
 
 interface FooterItem {
@@ -44,7 +45,7 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ footerData }) => {
 
             <Maindiv key={item.id}>
               {title !== 'Funiro.' ? (
-                <p>{title}</p>
+                <UiTypography className='title-text'>{title}</UiTypography>
               ) : null}
               {title === "Funiro." ? (
                 image?.data?.[0]?.attributes?.url && (
@@ -53,21 +54,22 @@ const FooterComponent: React.FC<FooterComponentProps> = ({ footerData }) => {
                       src={image.data[0].attributes.url}
                       alt={image.data[0].attributes.alternativeText || title}
                     />
-
-                    {description && <p>{description}</p>}
+                    <div>
+                    {description && <UiTypography className='title-text'>{description}</UiTypography>}
+                    </div>
                   </>
                 )
               ) : (
                 <>
                   <ul>
-                    {main && <li><h4>{main}</h4></li>}
-                    {submain && <li><h4>{submain}</h4></li>}
-                    {sub && <li><h4>{sub}</h4></li>}
-                    {subtitle && <li><h4>{subtitle}</h4></li>}
+                    {main && <li><UiTypography varient='h4' className='main-text'>{main}</UiTypography></li>}
+                    {submain && <li><UiTypography varient='h4' className='main-text'>{submain}</UiTypography></li>}
+                    {sub && <li><UiTypography varient='h4' className='main-text'>{sub}</UiTypography></li>}
+                    {subtitle && <li><UiTypography varient='h4' className='main-text'>{subtitle}</UiTypography></li>}
 
                     {text && <li>
                       <input type="text" placeholder="Enter Your Email Address"/>
-                      <h5>{text}</h5>
+                      <UiTypography varient='h5' className='button-text'>{text}</UiTypography>
                     </li>}
                   </ul>
                 </>

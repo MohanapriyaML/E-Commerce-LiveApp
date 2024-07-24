@@ -53,10 +53,10 @@ const ProductsList = ({ bannerData }: any) => {
                 </HoverOverlay>
               </StyledImageWrapper>
               <ProductName>
-                <CardTypo><p>{product.text}</p></CardTypo>
+                <CardTypo variant='h6'>{product.text}</CardTypo>
                 <Subtypo><p>{product.subText}</p></Subtypo>
+                <Price>{product.price}</Price>
               </ProductName>
-              <Price>{product.price}</Price>
             </ProductItem>
           );
         })}

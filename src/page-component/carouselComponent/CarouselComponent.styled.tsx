@@ -1,10 +1,11 @@
 import breakpoints from "@/themes/breakpoints";
+import { theme } from "@/themes/theme";
 import UiButton from "genpixels_ui_components/src/ui-components/button/UiButton";
 import UiTypography from "genpixels_ui_components/src/ui-components/typography/UiTypography";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  background-color: #fcf8f3;
+  background-color: ${theme.colors.pink};
   display: flex;
   height: 100%;
   width: 100%;
@@ -91,6 +92,7 @@ export const HeadTypography = styled(UiTypography)`
 `;
 export const DescTypography = styled(UiTypography)`
   font-weight: 500 !important;
+  color:${theme.colors.darkgrey} !important;
   ${breakpoints.xs} {
     font-size: 8px;
     line-height: 15px;
@@ -109,8 +111,8 @@ export const DescTypography = styled(UiTypography)`
   }
 `;
 export const ButtonStyled = styled(UiButton)`
-  background-color: #b88e2f !important;
-  color: #ffffff;
+  background-color: ${theme.colors.sandle} !important;
+  color: ${theme.colors.white};
   font-weight: 700 !important;
   border: none;
   border-radius: 0 !important;
@@ -196,7 +198,7 @@ export const SubPart = styled.div`
   }
 `;
 export const ChildDiv = styled.div`
-  background-color: rgba(255, 255, 255, 0.72);
+  background-color: ${theme.colors.lightwhite};
   display: flex;
   flex-direction: column;
   line-height: 25px;
@@ -238,7 +240,7 @@ export const InnerTypography = styled(UiTypography)`
   }
 `;
 export const ArrowDiv = styled.div`
-  background-color: #b88e2f !important;
+  background-color: ${theme.colors.sandle} !important;
   height: 30px;
   width: 30px;
   position: relative;

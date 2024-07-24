@@ -1,25 +1,24 @@
 import styled from 'styled-components';
 import breakpoints from '@/themes/breakpoints';
+import { theme } from '@/themes/theme';
+import UiTypography from 'genpixels_ui_components/src/ui-components/typography/UiTypography';
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 20px;
-  // padding: 0 7%;
   box-sizing: border-box;
   cursor: pointer;
 
   ${breakpoints.xs} 
   {
     grid-template-columns: 1fr;
-    // padding: 0 5%;
   }
 
   ${breakpoints.sm}
    {
     grid-template-columns: 1fr 1fr 1fr;
-    // padding: 0 5%;
   }
 
   ${breakpoints.md} 
@@ -32,14 +31,12 @@ export const Container = styled.div`
   {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
-    // padding: 0 5%;
   }
 
   ${breakpoints.xl} 
   {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
-    // padding: 0 7%;
   }
 `;
 
@@ -47,9 +44,9 @@ export const Buttons = styled.div`
   margin-bottom:70px;
   button
    {
-    background: rgba(255, 255, 255, 1);
+    background: ${theme.colors.white};
     color: rgba(184, 142, 47, 1);
-    border:1px solid #B88E2F;
+    border:1px solid ${theme.colors.sandle};
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -83,7 +80,7 @@ export const HoverOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 500px;
-  background: rgba(58, 58, 58, 0.5);
+  background: ${theme.colors.lightblack};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,11 +92,9 @@ export const HoverOverlay = styled.div`
 
 export const ProductItem = styled.div`
   position: relative;
-  border: 1px solid #ddd;
   border-radius: none;
   overflow: hidden;
   padding: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 0;
 
   &:hover ${HoverOverlay} 
@@ -192,19 +187,16 @@ export const TagsContainer = styled.div`
   gap: 20px;
 `;
 
-export const CardTypo = styled('p')`
-  color: black;
-  font-weight: bold;
+export const CardTypo = styled(UiTypography)`
+  font-weight: 600 !important;
   display: flex;
-  font-size: 22px;
-  font-weight: 400;
   line-height: 28.8px;
   margin-bottom: 5px;
-  margin-left: 15px;
+  margin-left: 15px !important;
 `;
 
 export const Subtypo = styled('p')`
-  color: black;
+  color: ${theme.colors.mediumgray};
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
@@ -213,7 +205,6 @@ export const Subtypo = styled('p')`
 `;
 
 export const Price = styled.div`
-  color: black;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -230,8 +221,10 @@ export const ProductDetails = styled.div`
 `;
 
 export const ProductName = styled.div`
+  background:#F4F5F7;
   font-weight: normal;
-  margin-top: 10px;
+  margin-top: -5px;
+  padding:10px;
   strong {
     font-weight: bold;
   }
