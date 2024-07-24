@@ -1,55 +1,39 @@
-import styled from 'styled-components';
-import breakpoints from '@/themes/breakpoints';
+import styled from "styled-components";
+import breakpoints from "@/themes/breakpoints";
+import UiTypography from "genpixels_ui_components/src/ui-components/typography/UiTypography";
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 20px;
-  // padding: 0 7%;
   box-sizing: border-box;
   cursor: pointer;
 
-  ${breakpoints.xs} 
-  {
+  ${breakpoints.xs} {
     grid-template-columns: 1fr;
-    // padding: 0 5%;
   }
 
-  ${breakpoints.sm}
-   {
+  ${breakpoints.sm} {
     grid-template-columns: 1fr 1fr 1fr;
-    // padding: 0 5%;
   }
 
-  ${breakpoints.md} 
-  {
-    grid-template-columns: 1fr 1fr 1fr;
+  ${breakpoints.md} {
     gap: 20px;
   }
 
-  ${breakpoints.lg} 
-  {
+  ${breakpoints.lg} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
-    // padding: 0 5%;
-  }
-
-  ${breakpoints.xl} 
-  {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
-    // padding: 0 7%;
   }
 `;
 
 export const Buttons = styled.div`
-  margin-bottom:70px;
-  button
-   {
+  margin-bottom: 70px;
+  button {
     background: rgba(255, 255, 255, 1);
     color: rgba(184, 142, 47, 1);
-    border:1px solid #B88E2F;
+    border: 1px solid #b88e2f;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -61,12 +45,11 @@ export const Buttons = styled.div`
   }
 `;
 
-export const Headings = styled.div`
-  text-align: center;
-  font-size: 35px;
-  margin-bottom: 40px;
-  margin-top:80px;
-  font-weight:bold;
+export const HeadTypo = styled(UiTypography)`
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  margin-top: 80px !important;
+  font-weight: 600 !important;
 `;
 
 export const StyledImageWrapper = styled.div`
@@ -88,7 +71,7 @@ export const HoverOverlay = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap:1px;
+  gap: 1px;
   opacity: 0;
   transition: opacity 0.3s;
 `;
@@ -102,13 +85,11 @@ export const ProductItem = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 0;
 
-  &:hover ${HoverOverlay} 
-  {
+  &:hover ${HoverOverlay} {
     opacity: 1;
   }
 
-  ${breakpoints.lg} 
-  {
+  ${breakpoints.lg} {
     margin: 0 5%;
   }
 `;
@@ -119,26 +100,7 @@ export const StyledImage = styled.img`
   object-fit: cover;
   margin: 0;
 
-  ${breakpoints.xs}
-   {
-    object-fit: cover;
-    margin: auto;
-  }
-  ${breakpoints.sm} 
-  {
-    object-fit: cover;
-  }
-  ${breakpoints.md} 
-  {
-    object-fit: cover;
-  }
-  ${breakpoints.lg} 
-  {
-    object-fit: cover;
-  }
-  ${breakpoints.xl}
-   {
-    object-fit: cover;
+  ${breakpoints.xs} {
     margin: auto;
   }
 `;
@@ -157,16 +119,16 @@ export const OfferLabel = styled.div<{ offerType?: string }>`
   justify-content: center;
   text-align: center;
   background-color: ${({ offerType }) =>
-    offerType === 'New'
-      ? 'rgba(46, 193, 172, 1)'
-      : (offerType === '-30%' || offerType === '-50%')
-      ? 'rgba(233, 113, 113, 1)'
-      : 'rgba(233, 113, 113, 1)'};
+    offerType === "New"
+      ? "rgba(46, 193, 172, 1)"
+      : offerType === "-30%" || offerType === "-50%"
+      ? "rgba(233, 113, 113, 1)"
+      : "rgba(233, 113, 113, 1)"};
 `;
 
 export const HoverButton = styled.button`
   background: rgba(255, 255, 255, 1);
-  margin-top:180px;
+  margin-top: 180px;
   color: rgba(184, 142, 47, 1);
   font-size: 16px;
   font-weight: bold;
@@ -187,12 +149,12 @@ export const TagsContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom:220px;
-  margin-top:20px;
+  margin-bottom: 220px;
+  margin-top: 20px;
   gap: 20px;
 `;
 
-export const CardTypo = styled('p')`
+export const CardTypo = styled(UiTypography)`
   color: black;
   font-weight: bold;
   display: flex;
@@ -200,16 +162,16 @@ export const CardTypo = styled('p')`
   font-weight: 400;
   line-height: 28.8px;
   margin-bottom: 5px;
-  margin-left: 15px;
+  margin-left: 15px !important;
 `;
 
-export const Subtypo = styled('p')`
+export const Subtypo = styled(UiTypography)`
   color: black;
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
   margin-bottom: 10px;
-  margin-left: 15px;
+  margin-left: 15px !important;
 `;
 
 export const Price = styled.div`

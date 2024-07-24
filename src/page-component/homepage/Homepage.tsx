@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 
-import { CollectionItem } from "./types";
 import Products from "../products/Products";
 import BrowseList from "../browseRange/BrowseRange";
 import useCollection from "@/service/api";
