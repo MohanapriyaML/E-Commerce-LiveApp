@@ -51,7 +51,7 @@ export const DesUiTypography = styled(UiTypography)`
   font-weight: 600;
   line-height: 30px;
   margin-bottom: 40px !important;
-  color:${theme.colors.mediumgray};
+  color:${theme.colors.mediumgray} !important;
   ${breakpoints.xs} {
     margin-left: 20px;
     font-size: 16px;
