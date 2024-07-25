@@ -21,6 +21,7 @@ export const Container = styled.div`
   }
 
   ${breakpoints.md} {
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
 
@@ -29,8 +30,7 @@ export const Container = styled.div`
     gap: 20px;
   }
 
-  ${breakpoints.xl} 
-  {
+  ${breakpoints.xl} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
   }
@@ -53,6 +53,7 @@ export const Buttons = styled.div`
     cursor: pointer;
   }
 `;
+
 
 export const HeadTypo = styled(UiTypography)`
   text-align: center !important;
@@ -108,11 +109,25 @@ export const StyledImage = styled.img`
   margin: 0;
 
   ${breakpoints.xs} {
+    object-fit: cover;
+    margin: auto;
+  }
+  ${breakpoints.sm} {
+    object-fit: cover;
+  }
+  ${breakpoints.md} {
+    object-fit: cover;
+  }
+  ${breakpoints.lg} {
+    object-fit: cover;
+  }
+  ${breakpoints.xl} {
+    object-fit: cover;
     margin: auto;
   }
 `;
 
-export const OfferLabel = styled.div<{ offerType?: string }>`
+export const OfferLabel = styled('div')<{ offerType?: string }>`
   position: absolute;
   top: 10px;
   right: 10px;
@@ -126,11 +141,11 @@ export const OfferLabel = styled.div<{ offerType?: string }>`
   justify-content: center;
   text-align: center;
   background-color: ${({ offerType }) =>
-    offerType === "New"
-      ? "rgba(46, 193, 172, 1)"
-      : offerType === "-30%" || offerType === "-50%"
-      ? "rgba(233, 113, 113, 1)"
-      : "rgba(233, 113, 113, 1)"};
+    offerType === 'New'
+      ? `${theme.colors.blue}`
+      : (offerType === '-30%' || offerType === '-50%')
+      ? `${theme.colors.darkpink}`
+      : `${theme.colors.darkpink}`};
 `;
 
 export const HoverButton = styled.button`

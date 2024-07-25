@@ -6,6 +6,8 @@ export interface Theme {
         secondary: string;
         accent: string;
         lightgrey:string;
+        blue:string;
+        darkpink:string,
         babypink:string;
         sandle:string;
         pink:string;
@@ -29,6 +31,8 @@ export const theme: Theme = {
         white: "#fff",
         black: "#000",
         lightgrey:"#9F9F9F",
+        blue:"#2EC1AC",
+        darkpink:"#E97171",
         babypink:"#FFF3E3",
         sandle:"#B88E2F",
         pink:"#fcf8f3",

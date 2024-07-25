@@ -32,7 +32,7 @@ const ProductsList = ({ bannerData }: any) => {
             <ProductItem key={index}>
               <StyledImageWrapper>
                 <StyledImage src={productImage} alt={product.text} />
-                {product.offer && <OfferLabel>{product.offer}</OfferLabel>}
+                {product.offer && <OfferLabel offerType={product.offer}>{product.offer}</OfferLabel>}
                 <HoverOverlay>
                   <HoverButton>Add to Cart</HoverButton>
                   <TagsContainer>
