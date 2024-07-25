@@ -7,7 +7,6 @@ import {
   ImageUi,
   Titletypo,
 } from "./BrowseRange.styled";
-import UiTypography from "genpixels_ui_components/src/ui-components/typography/UiTypography";
 
 const BrowseList = ({ bannerData }: any) => {
   const products = bannerData?.[1]?.productImage;

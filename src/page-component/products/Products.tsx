@@ -56,41 +56,6 @@ const ProductsList = ({ bannerData }: any) => {
             </ProductItem>
           );
         })}
-        {products &&
-          products.map((product: any, index: any) => {
-            const productImage = product.bannerImage?.data?.[0]?.attributes.url;
-            return (
-              <ProductItem key={index}>
-                <StyledImageWrapper>
-                  <StyledImage src={productImage} alt={product.text} />
-                  {product.offer && <OfferLabel>{product.offer}</OfferLabel>}
-                  <HoverOverlay>
-                    <HoverButton>Add to Cart</HoverButton>
-                    <TagsContainer>
-                      <HoverTag>
-                        <FaShareAlt /> Share
-                      </HoverTag>
-                      <HoverTag>
-                        <MdCompareArrows /> Compare
-                      </HoverTag>
-                      <HoverTag>
-                        <FaRegHeart /> Like
-                      </HoverTag>
-                    </TagsContainer>
-                  </HoverOverlay>
-                </StyledImageWrapper>
-                <ProductName>
-                  <CardTypo>
-                    {product.text}
-                  </CardTypo>
-                  <Subtypo>
-                  {product.subText}
-                  </Subtypo>
-                </ProductName>
-                <Price>{product.price}</Price>
-              </ProductItem>
-            );
-          })}
       </Container>
       <Buttons>
         <button>Show more</button>
