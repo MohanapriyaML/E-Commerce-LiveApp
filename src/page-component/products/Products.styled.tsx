@@ -1,7 +1,8 @@
+
 import styled from 'styled-components';
 import breakpoints from '@/themes/breakpoints';
-import UiTypography from 'genpixels_ui_components/src/ui-components/typography/UiTypography';
 import { theme } from '@/themes/theme';
+import UiTypography from 'genpixels_ui_components/src/ui-components/typography/UiTypography';
 
 export const Container = styled.div`
   display: grid;
@@ -36,11 +37,12 @@ export const Container = styled.div`
 `;
 
 export const Buttons = styled.div`
-  margin-bottom: 70px;
-  button {
-    background: rgba(255, 255, 255, 1);
-    color: rgba(184, 142, 47, 1);
-    border: 1px solid #b88e2f;
+  margin-bottom:70px;
+  button
+   {
+    background: ${theme.colors.white};
+    color: ${theme.colors.sandle};
+    border:1px solid ${theme.colors.sandle};
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -52,12 +54,12 @@ export const Buttons = styled.div`
   }
 `;
 
-export const Headings = styled.div`
-  text-align: center;
-  font-size: 35px;
-  margin-bottom: 40px;
-  margin-top: 80px;
-  font-weight: bold;
+
+export const HeadTypo = styled(UiTypography)`
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  margin-top: 80px !important;
+  font-weight: 600 !important;
 `;
 
 export const StyledImageWrapper = styled.div`
@@ -74,7 +76,7 @@ export const HoverOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 500px;
-  background: rgba(58, 58, 58, 0.5);
+  background: ${theme.colors.lightblack};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,10 +88,9 @@ export const HoverOverlay = styled.div`
 
 export const ProductItem = styled.div`
   position: relative;
-  border: 1px solid #ddd;
+  border-radius: none;
   overflow: hidden;
   padding: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 0;
 
   &:hover ${HoverOverlay} {
@@ -175,28 +176,24 @@ export const TagsContainer = styled.div`
   gap: 20px;
 `;
 
-export const CardTypo = styled('p')`
-  color: black;
-  font-weight: bold;
+export const CardTypo = styled(UiTypography)`
+  font-weight: 600 !important;
   display: flex;
-  font-size: 22px;
-  font-weight: 400;
   line-height: 28.8px;
   margin-bottom: 5px;
-  margin-left: 15px;
+  margin-left: 15px !important;
 `;
 
 export const Subtypo = styled('p')`
-  color: black;
+  color: ${theme.colors.mediumgray};
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
   margin-bottom: 10px;
-  margin-left: 15px;
+  margin-left: 15px !important;
 `;
 
 export const Price = styled.div`
-  color: black;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -213,8 +210,10 @@ export const ProductDetails = styled.div`
 `;
 
 export const ProductName = styled.div`
+  background:#F4F5F7;
   font-weight: normal;
-  margin-top: 10px;
+  margin-top: -5px;
+  padding:10px;
   strong {
     font-weight: bold;
   }

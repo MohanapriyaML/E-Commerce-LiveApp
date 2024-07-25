@@ -1,8 +1,7 @@
-import React from 'react';
-import { FaShareAlt, FaRegHeart } from 'react-icons/fa';
-import { MdCompareArrows } from 'react-icons/md';
+import React from "react";
+import { FaShareAlt, FaRegHeart } from "react-icons/fa";
+import { MdCompareArrows } from "react-icons/md";
 import {
-  Headings,
   Container,
   ProductItem,
   StyledImageWrapper,
@@ -16,27 +15,22 @@ import {
   HoverOverlay,
   HoverButton,
   HoverTag,
-  TagsContainer
-} from './Products.styled';
-import UiTypography from 'genpixels_ui_components/src/ui-components/typography/UiTypography';
+  TagsContainer,
+  HeadTypo,
+} from "./Products.styled";
 
 const ProductsList = ({ bannerData }: any) => {
-  console.log('bannerData', bannerData);
-
   const products = bannerData?.[3]?.productImage;
 
   return (
     <div className="body-gap">
-      <Headings>
-        <p>{bannerData?.[3]?.heading}</p>
-      </Headings>
+        <HeadTypo variant='h3'>{bannerData?.[3]?.heading}</HeadTypo>
       <Container>
         {products && products.map((product : any, index : any) => {
           const productImage = product.bannerImage?.data?.[0]?.attributes.url;
           return (
             <ProductItem key={index}>
               <StyledImageWrapper>
-                <UiTypography>{}</UiTypography>
                 <StyledImage src={productImage} alt={product.text} />
                 {product.offer && <OfferLabel offerType={product.offer}>{product.offer}</OfferLabel>}
                 <HoverOverlay>
@@ -55,10 +49,10 @@ const ProductsList = ({ bannerData }: any) => {
                 </HoverOverlay>
               </StyledImageWrapper>
               <ProductName>
-                <CardTypo><p>{product.text}</p></CardTypo>
+                <CardTypo variant='h6'>{product.text}</CardTypo>
                 <Subtypo><p>{product.subText}</p></Subtypo>
+                <Price>{product.price}</Price>
               </ProductName>
-              <Price>{product.price}</Price>
             </ProductItem>
           );
         })}

@@ -1,29 +1,36 @@
-import React from 'react';
-import { BrowserItem, Container, Headings, ImageUi, Titletypo } from './BrowseRange.styled';
-import { CardTypo } from '../products/Products.styled';
+import React from "react";
+import {
+  BrowserItem,
+  Container,
+  DesUiTypography,
+  HdUiTypography,
+  ImageUi,
+  Titletypo,
+} from "./BrowseRange.styled";
 
-const BrowseList = ({ bannerData }:any) => {
-  console.log('bannerData', bannerData);
-
+const BrowseList = ({ bannerData }: any) => {
   const products = bannerData?.[1]?.productImage;
 
   return (
     <div className="body-gap">
       <BrowserItem>
-        <Headings>
-          <div> <h1>{bannerData?.[1]?.heading}</h1></div>
-          <p>{bannerData?.[1]?.description}</p>
-        </Headings>
+        <div>
+          {" "}
+          <HdUiTypography>{bannerData?.[1]?.heading}</HdUiTypography>
+        </div>
+        <DesUiTypography>{bannerData?.[1]?.description}</DesUiTypography>
         <Container>
-          {products && products.map((product : any, index : any) => {
-            const productImage = product.bannerImage?.data?.[0]?.attributes.url;
-            return (
-              <div key={index}>
-                <ImageUi src={productImage} alt={product.text} />
-                <Titletypo>{product.text}</Titletypo>
-              </div>
-            );
-          })}
+          {products &&
+            products.map((product: any, index: any) => {
+              const productImage =
+                product.bannerImage?.data?.[0]?.attributes.url;
+              return (
+                <div key={index}>
+                  <ImageUi src={productImage} alt={product.text} />
+                  <Titletypo>{product.text}</Titletypo>
+                </div>
+              );
+            })}
         </Container>
       </BrowserItem>
     </div>

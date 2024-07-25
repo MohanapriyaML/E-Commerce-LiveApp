@@ -26,22 +26,19 @@ export const Maindiv = styled.div`
   img {
     margin-bottom: 70px;
   }
-  h4{
-    margin-top:20px;
+  .main-text{
+    font-weight:600 !important;
+    margin-top:20px !important;
   }
-  p{
-    margin-bottom: 70px;
-    color:${theme.colors.lightgrey};
-    font-size:14px;
-    line-height:24px;
+  .title-text{
+    margin-bottom: 70px !important;
+    color:${theme.colors.lightgrey} !important;
+    font-size:14px !important;
+    line-height:24px !important;
   }
-  h6{
-    color:${theme.colors.lightgrey};
-    font-size:14px;
-    line-height:24px;
-  }
-  h5{
-    border-bottom: 1.5px solid ${theme.colors.black};
+  .button-text{
+    font-weight:500 !important;
+    border-bottom: 1.5px solid ${theme.colors.black} !important;
     margin-top:15px;
   }
   li {
@@ -53,7 +50,7 @@ export const Maindiv = styled.div`
     gap:10px;
     input{
         border: none;
-        border-bottom: 1.5px solid #000;
+        border-bottom: 1.5px solid ${theme.colors.black};
         outline: none;
         padding: 5px 0;
         width: 100%;
@@ -65,18 +62,18 @@ export const Maindiv = styled.div`
   }
   ${breakpoints.xs}{
     img{
-      margin-bottom:10px;
+      margin-bottom:30px;
     }
-    p{
-    margin-bottom:0px;
+    .title-text{
+    margin-bottom:0px !important;
     }
   }
   ${breakpoints.md}{
     img{
-      margin-bottom:50px;
+      margin-bottom:40px;
     }
-    p{
-    margin-bottom:30px;
+    .title-text{
+    margin-bottom:30px !important;
     }
   }
 `;
@@ -90,14 +87,13 @@ export const BottomFotter = styled('div')`
    }
 `
 export const TypoPara = styled(UiTypography)`
-   color:${theme.colors.black};
-   font-size:14px;
+   font-size:14px !important;
    font-weight:400;
    line-height:24px;
    ${breakpoints.xs}{
-     font-size:12px;
+     font-size:12px !important;
    }
    ${breakpoints.md}{
-    font-size:14px;
+    font-size:14px !important;
   }
 `

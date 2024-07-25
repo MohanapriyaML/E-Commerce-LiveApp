@@ -8,6 +8,14 @@ export interface Theme {
         lightgrey:string;
         blue:string;
         darkpink:string,
+        babypink:string;
+        sandle:string;
+        pink:string;
+        lightwhite:string;
+        lightblack:string;
+        grey:string;
+        mediumgray:string;
+        darkgrey:string;
     };
     fonts: {
         body: string;
@@ -25,6 +33,14 @@ export const theme: Theme = {
         lightgrey:"#9F9F9F",
         blue:"#2EC1AC",
         darkpink:"#E97171",
+        babypink:"#FFF3E3",
+        sandle:"#B88E2F",
+        pink:"#fcf8f3",
+        lightwhite:"#FFFFFFB8",
+        lightblack:"#3A3A3A80",
+        grey:"#ddd",
+        mediumgray:"#898989",
+        darkgrey:"#616161"
     },
     fonts: {
         body: "Arial, sans-serif",

@@ -16,7 +16,7 @@ import {
 } from "./CarouselComponent.styled";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Carousel from "./carousel/Carousel";
+import Carousel from "./helper-component/carousel/Carousel";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const CarouselComponent = ({ bannerData }: any) => {
@@ -31,7 +31,7 @@ const CarouselComponent = ({ bannerData }: any) => {
 
   return (
     <>
-      <MainContainer>
+      <MainContainer className="body-gap">
         <ContentDiv>
           <HeadTypography>{bannerData?.[2]?.heading}</HeadTypography>
           <DescTypography>{bannerData?.[2]?.description}</DescTypography>
@@ -69,7 +69,7 @@ const CarouselComponent = ({ bannerData }: any) => {
                 </div>
               ))}
             </Carousel>
-          </div>
+            </div>
         </CarouselDiv>
       </MainContainer>
     </>
