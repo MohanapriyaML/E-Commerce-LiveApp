@@ -18,6 +18,7 @@ import {
   HoverTag,
   TagsContainer
 } from './Products.styled';
+import UiTypography from 'genpixels_ui_components/src/ui-components/typography/UiTypography';
 
 const ProductsList = ({ bannerData }: any) => {
   console.log('bannerData', bannerData);
@@ -35,8 +36,9 @@ const ProductsList = ({ bannerData }: any) => {
           return (
             <ProductItem key={index}>
               <StyledImageWrapper>
+                <UiTypography>{}</UiTypography>
                 <StyledImage src={productImage} alt={product.text} />
-                {product.offer && <OfferLabel>{product.offer}</OfferLabel>}
+                {product.offer && <OfferLabel offerType={product.offer}>{product.offer}</OfferLabel>}
                 <HoverOverlay>
                   <HoverButton>Add to Cart</HoverButton>
                   <TagsContainer>
