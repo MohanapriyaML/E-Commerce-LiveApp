@@ -16,6 +16,8 @@ export interface Theme {
         grey:string;
         mediumgray:string;
         darkgrey:string;
+        lightpink:string;
+        brown:string;
     };
     fonts: {
         body: string;
@@ -40,7 +42,9 @@ export const theme: Theme = {
         lightblack:"#3A3A3A80",
         grey:"#ddd",
         mediumgray:"#898989",
-        darkgrey:"#616161"
+        darkgrey:"#616161",
+        lightpink:"#F9F1E7",
+        brown:"#B88E2F"
     },
     fonts: {
         body: "Arial, sans-serif",

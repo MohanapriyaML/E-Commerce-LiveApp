@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import breakpoints from '@/themes/breakpoints';
 import { theme } from '@/themes/theme';
 import UiTypography from 'genpixels_ui_components/src/ui-components/typography/UiTypography';
+import Link from 'next/link';
 
 export const Container = styled.div`
   display: grid;
@@ -28,6 +29,7 @@ export const Container = styled.div`
   ${breakpoints.lg} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
+    margin-bottom:50px;
   }
 
   ${breakpoints.xl} {
@@ -53,7 +55,9 @@ export const Buttons = styled.div`
     cursor: pointer;
   }
 `;
-
+export const ButtonLink = styled(Link)`
+   text-decoration:none;
+`
 
 export const HeadTypo = styled(UiTypography)`
   text-align: center !important;
@@ -127,7 +131,7 @@ export const StyledImage = styled.img`
   }
 `;
 
-export const OfferLabel = styled('div')<{ offerType?: string }>`
+export const OfferLabel = styled('div') <{ offerType?: string }>`
   position: absolute;
   top: 10px;
   right: 10px;
@@ -144,8 +148,8 @@ export const OfferLabel = styled('div')<{ offerType?: string }>`
     offerType === 'New'
       ? `${theme.colors.blue}`
       : (offerType === '-30%' || offerType === '-50%')
-      ? `${theme.colors.darkpink}`
-      : `${theme.colors.darkpink}`};
+        ? `${theme.colors.darkpink}`
+        : `${theme.colors.darkpink}`};
 `;
 
 export const HoverButton = styled.button`

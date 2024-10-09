@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaShareAlt, FaRegHeart } from "react-icons/fa";
 import { MdCompareArrows } from "react-icons/md";
 import {
@@ -17,16 +17,26 @@ import {
   HoverTag,
   TagsContainer,
   HeadTypo,
+  ButtonLink,
 } from "./Products.styled";
+import UiButton from "genpixels_ui_components/src/ui-components/button/UiButton";
+
 
 const ProductsList = ({ bannerData }: any) => {
   const products = bannerData?.[3]?.productImage;
+  const button = bannerData?.[3]?.button?.text;
+  const [visibleProducts, setVisibleProducts] = useState(8);
+
+  const showMoreProducts = () => {
+    setVisibleProducts(products.length);
+  };
+
 
   return (
     <div className="body-gap">
-        <HeadTypo variant='h3'>{bannerData?.[3]?.heading}</HeadTypo>
+      <HeadTypo variant='h3'>{bannerData?.[3]?.heading}</HeadTypo>
       <Container>
-        {products && products.map((product : any, index : any) => {
+        {products.slice(0, visibleProducts).map((product: any, index: any) => {
           const productImage = product.bannerImage?.data?.[0]?.attributes.url;
           return (
             <ProductItem key={index}>
@@ -57,9 +67,13 @@ const ProductsList = ({ bannerData }: any) => {
           );
         })}
       </Container>
-      <Buttons>
-        <button>Show more</button>
-      </Buttons>
+      {visibleProducts <= products.length && (
+        <Buttons>
+          <ButtonLink href='/product'>
+            <UiButton variant={"text"}>{button}</UiButton>
+          </ButtonLink>
+        </Buttons>
+      )}
     </div>
   );
 };
