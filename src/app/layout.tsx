@@ -18,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name='keyword' content='E-commerce'></meta>
+      </head>
       <body className={inter.className}>
         <StyledComponentsRegistry>
           <HomePageLayout>{children}</HomePageLayout>
