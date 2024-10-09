@@ -7,13 +7,13 @@ import React, { useEffect, useState } from "react";
 
 const Home: React.FC = () => {
   const [collection, setCollection] = useState<CollectionItem[]>([]);
-  const itemId = 1;
+  const itemId = 5;
 
   useEffect(() => {
     const fetchCollection = async () => {
       try {
         const response = await fetch(
-          `https://e-commerce-templete-strapi.onrender.com/api/e-commerces/${itemId}?populate=*`
+          `http://e-commerce-gen.com/v1/e-commerces/${itemId}?populate[header][populate]=logo,Na[…].bannerImage,button&populate[footer][populate]=footer,image`
         );
 
         const data = await response.json();
