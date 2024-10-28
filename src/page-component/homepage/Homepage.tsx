@@ -28,8 +28,8 @@ const Homepage = () => {
   return (
     <>
     <Cartpage/>
-    <ProductDetails/>
-    <ProductDetailsAlter/> 
+    {/* <ProductDetails/>
+    <ProductDetailsAlter/>  */}
       {collection.length > 0 ? (
         collection.map((item, itemIndex) => (
           <React.Fragment key={itemIndex}>
