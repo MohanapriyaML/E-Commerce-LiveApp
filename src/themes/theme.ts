@@ -20,6 +20,7 @@ export interface Theme {
     brown: string;
     Cartblue: string;
     Cartgrey: string;
+    alterblack: string;
   };
   fonts: {
     body: string;
@@ -48,7 +49,8 @@ export const theme: Theme = {
     lightpink: "#F9F1E7",
     brown: "#B88E2F",
     Cartblue: "#1E293B",
-    Cartgrey:"#6C757D"
+    Cartgrey:"#6C757D",
+    alterblack:"#2424242"
   },
   fonts: {
     body: "Arial, sans-serif",
